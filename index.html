@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Jeu</title>
+	<meta name="description" content="Poitiers 2017-18" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="../lib/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<link href='http://fonts.googleapis.com/css?family=Nobile:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/cmu-serif" type="text/css"/> 
+	<link type="text/css" rel="stylesheet" media="all" href="css/styles.css" />
+
+	<script type="text/javascript" src='js/scripts.js'></script>
+</head>
+<body>
+<div class="page">
+	<div class="header">
+		<h1>Jeu</h1>
+
+	</div>
+	<div class="content">
+		<h2>Le programme 2017-2018</h2>
+		<div class="colonne">
+		<p>
+		L'intelligence artificielle progresse chaque jour. Désormais les algorithmes, plutôt que de se baser 
+		sur la puissance de calcul et la quantité de données analysables peuvent, en plus, être auto-apprenants, 
+		par exemple dans les programmes de jeu d'échecs, ou de jeu de go.
+		<img src="images/ke-jie.jpg" alt="Ke Jie, battu par AlphaGo" class="illus_img">
+		<p class="legende">
+		Ke Jie, battu par AlphaGo. 27/5/17, 
+		<a href="http://www.lemonde.fr/pixels/article/2017/05/27/apres-avoir-terrasse-le-numero-1-mondial-du-jeu-de-go-alphago-prend-sa-retraite_5134882_4408996.html">Le Monde</a>.
+		<br>
+		<em>
+		« Ke Jie essayait de le battre à son propre jeu », a commenté Demis Hassabis, le fondateur de DeepMind, à l’issue 
+		de la troisième partie. Ke Jie a, en effet, repris à son compte certains coups signés AlphaGo –&nbsp;des
+		séquences inconoclastes, qui n’étaient auparavant pas jouées dans les compétitions de haut niveau. Les trois parties
+		ont été jouées ces derniers jours lors du Future of Go Summit qui se tenait cette semaine en Chine.
+		</em>
+		</p>
+		<p>
+		Écrire un programme de jeu, écrire du code "intelligent" demande plusieurs mois, voire années, d'apprentissage 
+		spécifique et il ne s'agira pas ici de devenir programmeur mais de jouer avec le code, avec l'interaction, 
+		grâce au Javascript. 
+		</p>
+		<p>
+		Quelques mots aussi sur DeepMind, l'ordinateur de Google qui fonctionne par apprentissage, grâce à la méthode
+		des "réseaux de neurones". DeepMind peut apprendre à jouer à un casse-brique aussi bien qu'au Go. Le réseau de neurones
+		est encore plus bête que tout, il ne sait pas qu'il joue, il ne sait pas ce qu'il apprend, mais pourtant il termine
+		par être plus "intelligent", ou devrions-nous dire "plus adapté".
+		</p>
+		<p>Le poisson électrique, par exemple, ne sait rien de la physique
+		de l'électricité et de ses <a href="https://fr.wikipedia.org/wiki/%C3%89quations_de_Maxwell">premières équations fondamentales</a>, 
+		qui donnent un cadre mathématique à l'électromagnétisme,
+		pourtant il est plus précis dans l'utilisation de son champ électrique (pour se déplacer et repérer les obstacles), 
+		que si les plus grands mathématiciens
+		et ingénieurs fabriquaient une machine équivalente. Pourquoi ? Parce qu'il a longuement appris, par erreurs et corrections,
+		comment faire. C'est cette méthode que les réseaux de neurones utilisent. Ils apprennent également petit à petit,
+		un modèle mathématique peut être déduit, <em>tout en restant opaque</em>, et utilisé de manière pratique, sans
+		passer par les équations de Maxwell. 
+		</p>
+		<p> En ce qui nous concerne, nous pourrons aborder par l'écrit ces problématiques, et le code nous servira à présenter
+		cela grâce à un <em>jeu à arborescence narrative</em>. Notre modèle sera le jeu des 
+		<em><a href="http://www.editions-delcourt.fr/special/grandmechantrenard/turbomedia.php">Aventures du Grand méchant renard</a></em>.
+		</p>
+		<p>
+			<a href="http://www.editions-delcourt.fr/special/grandmechantrenard/turbomedia.php"><img
+				src="images/gmr.png" alt="Editions Delcourt, Le Grand méchant Renard" width="200"></a>
+		</p>
+		<p>
+		<em>Le Grand Méchant Renard</em> est un jeu adapté du livre de Benjamin Renner, duquel a été tiré un film réalisé par
+		Benjamin Renner et Patrick Imbert. Le jeu aurait été réalisé (en Flash (Adobe)) par Benjamin Renner lui-même (à confirmer). Il 
+		est proposé sur le site des éditions Delcourt. Nous verrons comment dessiner l'arbre des possibles de ce jeu.
+		</p>
+		
+		</div>
+		<div class="colonne colonne_d">
+			<h2>Conception de notre jeu</h2>
+
+			<p>
+			<strong>Dans ce cours nous allons développer</strong> quelques pages à l'aide d'HTML et CSS. Javascript nous permettra de 
+			cacher, montrer, déplacer, mémoriser des éléments dans le cadre d'un jeu de piste, jeu de rôle dont le sujet d'écriture 
+			littéraire sera, a priori : Le Jeu et la fin de l'humanité ; ou Le Jeu et la société de contrôle/d'exploitation/de domination,
+			ou plus simplement Le Jeu et le Pouvoir. <br>
+			Nous pourrons adapter le(s) thème(s) si le temps nous le permet.
+			</p>
+			<p>
+			<strong>Il s'agira de développer de faux jeux</strong>, basés sur des règles d'apparences anodines, ou connues, ou réelles, 
+			mais qui se transformeront en tyrannie par la triche et l'arbitraire, afin de réfléchir sur notre dépendance 
+			aux machines et la manière dont des intérêts financiers et politique utilisent cette dépendance. On pense à 
+			l'état d'urgence, à la surveillance, aux agences d'espionnage qui font introduire des failles dans les 
+			appareils qui peuvent être utilisées par n'importe qui, aux nouvelles de méthodes de management d'entreprise
+			qui font intervenir le <em><a href="https://fr.wikipedia.org/wiki/Team_building">team-building</a></em> ou d'autres
+			formes de communication interne visant les employés et leur motivation, etc.
+			</p>
+			<p>Nous pourrons lire en regard des extraits de 
+			<em>W ou le souvenir d'enfance</em>, de Georges Perec, dans lequel des souvenirs d'enfance se mêlent à une fiction
+			écrite, enfant, où se rencontrent dramatiquement le jeu, le sport, et l'univers arbitraire et fatal des camps de concentration.
+			<br>
+			Nous pourrons écouter aussi le podcast de 
+			La Méthode scientifique	
+			sur <a href="https://www.franceculture.fr/emissions/la-methode-scientifique/echecs-et-maths">le jeu d'échec</a>,
+			avec Lisa Rougetet, chercheuse en mathématiques à l’Université Charles de Gaulle Lille 3,
+			et Eric Birmingham, maître international FIDE (Fédération Internationale des Echecs), qui explique pourquoi 
+			l'ordinateur est stupide : parce qu'il ne sait pas qu'il joue. C'est ce que pensait le concepteur de DeepBlue,
+			l'ordinateur maître d'échec qui a battu Kasparov, Murray Campbell.</p>
+				
+			<p>
+			 Enfin nous pourrons écrire un arbre
+			narratif personnel et voir comment on peut le coder, avec au départ simplement des phrases. 
+			</p>
+			<p>
+			On s'aidera de FreeMind pour créer l'arborescence du jeu.<br>
+			Téléchargement <a href="https://sourceforge.net/projects/freemind/files/freemind/1.0.0/FreeMind-Windows-Installer-1.0.0-max-java-installer-embedded.exe/download?use_mirror=kent&download=">ici</a>.
+			</p>
+			<p>
+			Un <a href="aventure/">exemple</a> de jeu HTML et Javascript.<br>
+			Puis peut-être fabriquer ce <a href="exercices/echecs.html">faux jeu d'échecs</a>.<br>
+			Les travaux des étudiantes sont à découvrir <a href="jeux/">ici</a>.
+			
+			</p>
+			<p class="citation">
+				Ainsi se passera sa première journée. Ainsi se passeront les suivantes. Au début, il ne comprendra pas. 
+				Des novices un peu plus anciens qui essaieront parfois de lui expliquer, de lui raconter, ce qui se passe, 
+				comment ça se passe, ce qu’il faut faire et ce qu’il ne faut pas faire. Mais, le plus souvent, ils n’y 
+				arriveront pas. Comment expliquer que ce qu’il découvre n’est pas quelque chose d’épouvantable, n’est pas 
+				un cauchemar, n’est pas quelque chose dont il va se réveiller brusquement, quelque chose qu’il va chasser 
+				de son esprit, comment expliquer que c’est cela la vie, la vie réelle, que c’est cela qu’il y aura tous les 
+				jours, que c’est cela qui existe et rien d’autre, qu’il est inutile de croire que quelque chose d’autre existe, 
+				de faire semblant de croire à autre chose, que ce n’est même pas la peine d’essayer de déguiser cela, d’essayer 
+				de l’affubler, que ce n’est même pas la peine de faire semblant de croire à quelque chose qu’il y aurait 
+				derrière cela, ou au-dessous, ou au-dessus. Il y a cela et c’est tout. Il y a des compétitions tous les 
+				jours, les Victoires ou les défaites. Il faut se battre pour vivre. Il n’y a pas d’autre choix. Il n’existe 
+				aucune alternative. Il n’est pas possible de se boucher les yeux, il n’est pas possible de refuser. Il n’y a ni 
+				recours, ni pitié, ni salut à attendre de personne. Il n’y a même pas à espérer que le temps arrangera cela. 
+				Il y a cela, il y a ce qu’il a vu, et parfois ce sera moins terrible que ce qu’il a vu, et parfois ce sera 
+				beaucoup plus terrible que ce qu’il a vu. Mais où qu’il tourne les yeux, c’est cela qu’il verra et rien d’autre 
+				et c’est cela seul qui sera vrai. <br>
+				<span class="aut_cit">Georges Perec</span>, <span class="op_cit">W ou le souvenir d'enfance</span>
+			</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

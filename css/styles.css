@@ -1,0 +1,101 @@
+body{
+	background-color: black;
+	font-family: Nobile;
+}
+.page {
+	background-color: white;
+	min-height: 500px;
+	overflow: auto;
+	padding: 10px;
+	
+}
+.header {
+	height: 350px;
+	background-image: url(../images/fond-mur-flou-1.jpg);
+	background-size: cover;
+	color:rgba(255,255,255,0.8);
+	padding-left: 20px;
+	padding-top: 10px;
+}
+.content {
+	width: 90%;
+	float: left;
+}
+.colonne {
+	float: left;
+	width: 40%;
+	margin-right: 5%;
+	text-align: justify;
+}
+.colonne_d {
+	border-left: 1px solid #CDCDCD;
+	padding-left: 10px;
+}
+.illus {
+	margin-bottom: 2px;
+	margin-top: 12px;
+}
+.illus_img {
+	width: 60%;
+	float: left;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 14px;
+}
+.legende {
+	clear: both;
+	width: 75%;
+	margin-top: 10px;
+	font-size: 85%;
+}
+.new_p {
+	clear: both;
+}
+.citation {
+	font-family: CMUSerifRoman, Times;
+	padding-left: 30px;
+}
+.aut_cit {
+	font-family: CMUSerifRoman, Times;
+	padding-left: 30px;
+	font-size: 85%;
+}
+.op_cit{
+	font-family: CMUSerifRoman, Times;
+	font-size: 85%;
+	font-style: italic;
+}
+
+@media screen and (max-width: 640px) {
+	.content {
+		width: 100%;
+	}
+	.illus_img {
+		width: 95%;
+	}
+	.colonne {
+		width: 90%;
+		clear:both;
+	}
+	.colonne_d {
+		padding-left: 0px;
+		border: 0px;
+	}
+}
+@media screen and (max-device-width: 640px) {
+	.content {
+		width: 100%;
+	}
+	.illus_img {
+		width: 95%;
+	}
+	.colonne {
+		width: 90%;
+		clear:both;
+	}
+	.colonne_d {
+		padding-left: 0px;
+		border: 0px;
+	}
+	
+}
